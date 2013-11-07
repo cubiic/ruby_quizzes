@@ -15,6 +15,7 @@
 # 35235235 -> "35,235,235"
 
 
+# Note: this works for floats as well:
 def pretty_number(num)
   num.to_s.tap do |s|
     true while s.gsub!(/^([^.]*)(\d)(?=(\d{3})+)/, "\\1\\2,")
