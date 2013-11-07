@@ -28,3 +28,5 @@ puts "1            #=> #{pretty_number 1}"
 puts "1000         #=> #{pretty_number 1000}"
 puts "10000.12456  #=> #{pretty_number 10000.12456}"
 puts "35235235     #=> #{pretty_number 35235235}"
+
+# November 2013

@@ -124,3 +124,5 @@ end
 # func2  0.120000   0.010000   0.130000 (  0.131855)
 
 # So it looks like anagram_2 is in general faster, while anagram_1 performs better with long words without anagrams.
+
+# November 2013
