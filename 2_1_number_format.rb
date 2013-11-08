@@ -15,8 +15,10 @@
 # 35235235 -> "35,235,235"
 
 
-# Note: this works for floats as well:
+# Integers only:
 def pretty_number(num)
+  raise 'Not an Integer' unless num.is_a?(Integer)
+  raise 'Not in range' unless (0..1_000_000_000).include?(num)
   num.to_s.tap do |s|
     true while s.gsub!(/^([^.]*)(\d)(?=(\d{3})+)/, "\\1\\2,")
   end
@@ -24,9 +26,11 @@ end
 
 puts "Tests:"
 puts
-puts "1            #=> #{pretty_number 1}"
-puts "1000         #=> #{pretty_number 1000}"
-puts "10000.12456  #=> #{pretty_number 10000.12456}"
-puts "35235235     #=> #{pretty_number 35235235}"
+puts "1          #=> #{pretty_number 1}"
+puts "1000       #=> #{pretty_number 1000}"
+puts "100_000    #=> #{pretty_number 100_000}"
+puts "35235235   #=> #{pretty_number 35235235}"
 
 # November 2013
+
+# Note: only for Integers, go to https://gist.github.com/CarlosCD/7376440 for a other cases
